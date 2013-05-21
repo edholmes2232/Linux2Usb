@@ -19,7 +19,7 @@ class bcolors:
         self.WARNING = ''
         self.FAIL = ''
         self.ENDC = ''
-  self.WHITE = ''
+        self.WHITE = ''
 	self.GREY = ''
 
 print bcolors.FAIL + "By continuing, you agree to holding full responsibility to f*cking up your computer."
