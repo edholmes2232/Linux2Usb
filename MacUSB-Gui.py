@@ -33,7 +33,7 @@ def UsbSelect():
 	isoNextButton.grid_forget()
 	global usbDirectory
 	usbDirectory = StringVar()
-	#global usbDirectory
+	global usbDirEntry
 	usbDirLabel = ttk.Label(mainframe, text="Please choose your USB Stick/Device")
 	usbDirEntry = ttk.Entry(mainframe, textvariable=usbDirectory)
 	usbDirButton = ttk.Button(mainframe, text="Browse", command=usbDirWindow)
@@ -42,8 +42,8 @@ def UsbSelect():
 	usbDirEntry.grid(column=1, row=2, sticky=E)
 	usbDirButton.grid(column=2, row=2, sticky=W)
 	usbNextButton.grid(column=3, row=3, sticky=(N, E, W, S))
-	
-	usbDirectory = tkFileDialog.askdirectory(initialdir="/Volumes")
+ 	
+	#usbDirectory = tkFileDialog.askdirectory(initialdir="/Volumes")
 	
 
 #def setText(text):
