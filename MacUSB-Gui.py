@@ -1,11 +1,12 @@
 from Tkinter import *
 import ttk
 import tkFileDialog
+import commands
 
 root = Tk()
 root.title("Usb Test")
 
-mainframe = ttk.Frame(root, padding="8 8 8 8")
+mainframe = ttk.Frame(root, padding="18 18 18 18")
 mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
 mainframe.columnconfigure(0, weight=1)
 mainframe.rowconfigure(0, weight=1)
@@ -24,7 +25,10 @@ def usbDirWindow():
 	usbDirEntry.insert(0,usbDirectory)	
 
 def runShit():
-	print ("%s %s" % (usbDirectory,isoDirectory.name))
+	print ("%s %s" % (usbDirectory.get(),fileDirectory.get()))
+	usbDiskCmd = 'commands'
+	usbDiskOutput = commands.getoutput(usbDiskCmd)
+	print usbDiskOutput 
 	
 def UsbSelect():
 	isoChooseLabel.grid_forget()
@@ -38,7 +42,7 @@ def UsbSelect():
 	usbDirEntry = ttk.Entry(mainframe, textvariable=usbDirectory)
 	usbDirButton = ttk.Button(mainframe, text="Browse", command=usbDirWindow)
 	usbNextButton = ttk.Button(mainframe, text="Next", command=runShit)
-	usbDirLabel.grid(column=2, row=1, sticky=(E, W))
+	usbDirLabel.grid(column=1, row=1, sticky=(E, W))
 	usbDirEntry.grid(column=1, row=2, sticky=E)
 	usbDirButton.grid(column=2, row=2, sticky=W)
 	usbNextButton.grid(column=3, row=3, sticky=(N, E, W, S))
