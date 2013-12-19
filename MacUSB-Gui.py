@@ -47,16 +47,9 @@ def UsbSelect():
 	usbDirButton.grid(column=2, row=2, sticky=W)
 	usbNextButton.grid(column=3, row=3, sticky=(N, E, W, S))
  	
-	#usbDirectory = tkFileDialog.askdirectory(initialdir="/Volumes")
-	
 
-#def setText(text):
-#    e.delete(0,END)
-#    e.insert(0,text)
-#    return
 fileDirectory = StringVar()
 isoChooseLabel = ttk.Label(mainframe, text="Choose your ISO file")
-#isoPathEntry = ttk.Label(mainframe, textvariable=fileDirectory)
 isoBrowseButton = ttk.Button(mainframe, text="Browse", command=openFile)
 isoPathEntry = ttk.Entry(mainframe, textvariable=fileDirectory)
 isoNextButton = ttk.Button(mainframe, text="Next", command=UsbSelect)
